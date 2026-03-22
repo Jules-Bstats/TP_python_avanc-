@@ -1,6 +1,16 @@
 import pandas as pd
 import plotly.graph_objects as go 
 import calendar 
+import dash
+from dash import html, dcc 
+import dash_bootstrap_components as dbc 
+import plotly.express as px
+import pandas as pd
+from dash import dash_table
+
+
+app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 
 # importation de la table de données
 data = pd.read_csv("datasets/data.csv")
@@ -154,14 +164,8 @@ indicateur_CA.update_layout(
 
 # APP 
 
-import dash
-from dash import html, dcc 
-import dash_bootstrap_components as dbc 
-import plotly.express as px
-import pandas as pd
-from dash import dash_table
 
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+
 
 app.layout = dbc.Container(
     fluid=True,
